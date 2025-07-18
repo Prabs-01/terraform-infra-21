@@ -27,9 +27,9 @@ resource "aws_security_group" "web_sg" {
 }
 
 resource "aws_instance" "web_server" {
-  ami           = "ami-0c02fb55956c7d316" # Ubuntu 22.04 (us-east-1)
-  instance_type = "t2.micro"
-  key_name      = aws_key_pair.deployer.key_name
+  ami             = "ami-0c02fb55956c7d316" # Ubuntu 22.04 (us-east-1)
+  instance_type   = "t2.micro"
+  key_name        = aws_key_pair.deployer.key_name
   security_groups = [aws_security_group.web_sg.name]
 
   user_data = <<-EOF
